@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EV Calculator</title>
+  </head>
+  <body>
+    <script>
+      function calc() {
+        var n1 = parseFloat(document.getElementById("n1").value);
+        var n2 = parseFloat(document.getElementById("n2").value);
+
+        document.getElementById("result").value = n1 + n2;
+      }
+    </script>
+    <h2>Compare your car to an electric car</h2>
+
+    <label for="cars">Number of Car/Small Van:</label>
+    <input type="text" id="n1" /><br />
+    <label for="cars">Number of Medium Van:</label> <input type="text" /><br />
+    <label for="cars">Number of Large Van:</label> <input type="text" /><br />
+    <label for="cars">Estimated Mileage of Car/Small Van</label>
+    <input type="text" id="n2" /><br />
+    <label for="cars">Estimated Mileage of Medium Van</label>
+    <input type="text" /><br />
+    <label for="cars">Estimated Mileage of Large Van</label>
+    <input type="text" /><br />
+    <button onclick="calc();">Result</button>
+    <input type="text" id="result" />
+  </body>
+</html>
