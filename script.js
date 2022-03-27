@@ -62,5 +62,6 @@ function calc() {
 
   var final_co2_saving = total_sv_co2 + total_mv_co2 + total_lv_co2;
   var final_cost_saving = total_sv_pound + total_mv_pound + total_lv_pound;
-  document.getElementById("result").value = final_co2_saving;
+  document.getElementById("co2").value = final_co2_saving;
+  document.getElementById("cost").value = final_cost_saving;
 }
