@@ -25,7 +25,8 @@ function calc() {
     /* Saving Calculation */
     sv_co2_saving = sv_co2_for_given_mileage - sv_ev_co2_for_given_mileage;
     sv_cost_saving = sv_cost_for_given_mileage - sv_ev_cost_for_given_mileage;
-  } else if (no_mv >= 1) {
+  }
+  if (no_mv >= 1) {
     /* Calculation for Diesel Vehicles */
     var mv_co2_for_given_mileage = 290 * mil_mv * 0.000001;
     var mv_cost_for_given_mileage = 0.18 * mil_mv;
@@ -37,7 +38,8 @@ function calc() {
     /* Saving Calculation */
     mv_co2_saving = mv_co2_for_given_mileage - mv_ev_co2_for_given_mileage;
     mv_cost_saving = mv_cost_for_given_mileage - mv_ev_cost_for_given_mileage;
-  } else if (no_lv >= 1) {
+  }
+  if (no_lv >= 1) {
     /* Calculation for Diesel Vehicles */
     var lv_co2_for_given_mileage = 400 * mil_lv * 0.000001;
     var lv_cost_for_given_mileage = 0.22 * mil_lv;
