@@ -4,28 +4,155 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="script.js"></script>
-    <title>EV Calculator</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <title>EV Calculator By Chakshu Goyal</title>
+    <link rel="icon" type="image/x-icon" href="icon.jpg" />
+    <link href="style.css" rel="stylesheet" />
   </head>
   <body>
-    <h2>Compare your car to an electric car</h2>
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">
+        <img
+          src="icon.jpg"
+          width="30"
+          height="30"
+          class="d-inline-block align-top"
+          alt=""
+        />
+        EV Calculator
+      </a>
+    </nav>
 
-    <label for="no_sv">Number of Car/Small Van:</label>
-    <input type="text" id="no_sv" value="0" /><br />
-    <label for="no_mv">Number of Medium Van:</label>
-    <input type="text" id="no_mv" value="0" /><br />
-    <label for="no_lv">Number of Large Van:</label>
-    <input type="text" id="no_lv" value="0" /><br />
-    <label for="mil_sv">Estimated Mileage of Car/Small Van</label>
-    <input type="text" id="mil_sv" value="0" /><br />
-    <label for="mil_mv">Estimated Mileage of Medium Van</label>
-    <input type="text" id="mil_mv" value="0" /><br />
-    <label for="mil_lv">Estimated Mileage of Large Van</label>
-    <input type="text" id="mil_lv" value="0" /><br />
-    <button onclick="calc();">Total Savings</button><br />
-    <label for="co2_saving">Total CO2 Saving (Metric Tonnes)</label>
-    <input type="text" id="co2" value="0" /><br />
-    <label for="co2_saving">Total Cost Saving (Pounds)</label>
-    <input type="text" id="cost" value="0" />
+    <!-- The video -->
+    <video autoplay muted loop id="myVideo">
+      <source
+        src="https://www.arup.com/-/media/arup/videos/electric-vehicle-recharge-animation.mp4"
+        type="video/mp4"
+      />
+    </video>
+
+    <!-- Calculator -->
+    <div class="content">
+      <h2 class="text-center" style="color: white; margin-bottom: 2rem">
+        Compare your car to an electric car
+      </h2>
+      <div id="form-main">
+        <div id="form-div">
+          <label for="no_sv" class="text-center text-white"
+            >Number of Car/Small Van:</label
+          >
+          <input class="feedback-input" type="text" id="no_sv" value="0" />
+          <label for="no_mv" class="text-center text-white"
+            >Number of Medium Van:</label
+          >
+          <input class="feedback-input" type="text" id="no_mv" value="0" />
+          <label for="no_lv" class="text-center text-white"
+            >Number of Large Van:</label
+          >
+          <input class="feedback-input" type="text" id="no_lv" value="0" />
+          <label for="mil_sv" class="text-center text-white"
+            >Estimated Mileage of Car/Small Van</label
+          >
+          <input class="feedback-input" type="text" id="mil_sv" value="0" />
+          <label for="mil_mv" class="text-center text-white"
+            >Estimated Mileage of Medium Van</label
+          >
+          <input class="feedback-input" type="text" id="mil_mv" value="0" />
+          <label for="mil_lv" class="text-center text-white"
+            >Estimated Mileage of Large Van</label
+          >
+
+          <input class="feedback-input" type="text" id="mil_lv" value="0" />
+          <br />
+          <button onclick="calc();" class="btn btn-primary">
+            Total Savings
+          </button>
+          <br />
+          <label for="co2_saving" class="text-center text-white"
+            >Total CO2 Saving (Metric Tonnes)</label
+          >
+          <input class="feedback-input" type="text" id="co2" value="0" />
+          <label for="co2_saving" class="text-center text-white"
+            >Total Cost Saving (Pounds)</label
+          >
+          <input class="feedback-input" type="text" id="cost" value="0" />
+        </div>
+      </div>
+    </div>
+
+    <!--Table for Diesel Vehicles-->
+    <h4 class="text-center" style="color: black; margin-top: 2rem">
+      Data for Diesel Vehicles
+    </h4>
+    <table class="customTable">
+      <thead>
+        <tr>
+          <th>Vehicle Type</th>
+          <th>CO2/Mile</th>
+          <th>£/mile</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Car/Light Van</td>
+          <td>130g</td>
+          <td>£0.12</td>
+        </tr>
+        <tr>
+          <td>Medium Van</td>
+          <td>290g</td>
+          <td>£0.18</td>
+        </tr>
+        <tr>
+          <td>Large Van</td>
+          <td>400g</td>
+          <td>£0.22</td>
+        </tr>
+      </tbody>
+    </table>
+    <!--Table for Electric Vehicles-->
+    <h4 class="text-center" style="color: black; margin-top: 2rem">
+      Data for Electric Vehicles
+    </h4>
+    <table class="customTable">
+      <thead>
+        <tr>
+          <th>Vehicle Type</th>
+          <th>CO2/Mile</th>
+          <th>£/mile</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Car/Light Van</td>
+          <td>0g</td>
+          <td>£0.05</td>
+        </tr>
+        <tr>
+          <td>Medium Van</td>
+          <td>0g</td>
+          <td>£0.09</td>
+        </tr>
+        <tr>
+          <td>Large Van</td>
+          <td>0g</td>
+          <td>£0.12</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!--Scripts-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
   </body>
 </html>
